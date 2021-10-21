@@ -60,7 +60,7 @@ class Content extends Component {
     try
     {
       var xhr = new XMLHttpRequest();
-      xhr.open("POST", 'http://127.0.0.1:5000/data', true);
+      xhr.open("POST", 'http://66.214.195.8:5000/data', true);
       xhr.onload = function() {
         console.log(this.status);
         if (this.status === 200)

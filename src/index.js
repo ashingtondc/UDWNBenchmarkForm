@@ -15,6 +15,8 @@ ReactDOM.render(
         My project involves building a similarity graph consisting of slang terms and regular English terms.
         This graph will yield a value between 0 and 1 indicating how similar a slang term and a regular English term are. 
         <br></br>
+        Apologies if any of these terms are offensive. They are mined directly from urbandictionary, and this set of 100 was chosen randomly. 
+        <br></br>
         Thanks for helping me graduate!
       </p>
     </div>

@@ -90,8 +90,7 @@ class Content extends Component {
         minRateDescription: "Not similar",
         maxRateDescription: "The same",
         isRequired: true,
-        rateValues: this.vals,
-        defaultValue: 5
+        rateValues: this.vals
       };
       elements.push(entry);
     }

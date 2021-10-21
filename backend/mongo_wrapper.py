@@ -3,7 +3,7 @@ from bson import ObjectId
 
 class Entry():
     db_client = pymongo.MongoClient("mongodb+srv://admin:BFGDRtoQhnOsgzqZ@cluster0.0xmnc.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE")
-    db = db_client.test
+    db = db_client.prod
     collection = db.submissions
 
     def upload_data(self, data):

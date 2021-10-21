@@ -13,6 +13,10 @@ def upload_data():
         data = request.get_json()
         print(data)
         upload_data = Entry().upload_data(data)
+        if upload_data:
+            return Response(status=200)
+        else:
+            return Response(status=400)
 
 @app.route('/', methods=["GET"])
 def hello():

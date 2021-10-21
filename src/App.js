@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as Survey from "survey-react"
 import "survey-react/survey.css";
 import './App.css';
-const { MongoClient } = require("mongodb");
 
 class App extends Component {
   //Define Survey JSON
@@ -43,33 +42,18 @@ class App extends Component {
       value: 10
     }
   ];
- 
 
-  async upload(client, data) {
-    try {
-      await client.connect();
-      console.log("Connected correctly to server");
-      const db = client.db("data");
-      // Use the collection "people"
-      const col = db.collection("test");
-      // Insert a single document, wait for promise so we can read it back
-      const p = await col.insertOne(data);
-      console.log(p);
-    } 
-    catch (err) {
-      console.log(err.stack);
-    }
-
-    finally {
-      await client.close();
-    }
-  }
   //Define a callback methods on survey complete
   onComplete(survey, options) {
     //Write survey results into database
-    const uri = "mongodb+srv://github:github123@cluster0.hqc2b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-    const client = new MongoClient(uri);
-    this.upload(client, survey.data);
+    // const uri = "mongodb+srv://github:github123@cluster0.hqc2b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    // const client = new MongoClient(uri);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", 'http://127.0.0.1:5000/data', true);
+
+    //Send the proper header information along with the request
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(survey.data));
     // console.log("Survey results: " + JSON.stringify(survey.data));
   }
 

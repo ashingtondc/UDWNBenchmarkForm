@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <h1>Slang Term Similarity Graph Benchmark Survey</h1>
-    <div style={{width: "35%"}}>
+    <div style={{margin: "5px"}}>
       <p>
         Welcome! Thanks for offering to fill out this survey. 
         <br></br>
